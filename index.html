@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riza Aliya Putri | Web Portofolio RPL</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable dark mode toggling via class
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        themeCream: '#F9F6F0',       
+                        themeCreamDark: '#EBE3D5',   
+                        themeRed: '#B22222',         
+                        themeRedDark: '#8B0000',
+                        darkBg: '#121212',
+                        darkCard: '#1E1E1E',
+                        darkBorder: '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(139, 0, 0, 0.1);
+        }
+        .dark .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-themeCream dark:bg-darkBg text-gray-800 dark:text-gray-200 antialiased selection:bg-themeRed selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-themeCream/90 dark:bg-darkBg/90 backdrop-blur-md border-b border-themeCreamDark dark:border-darkBorder transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-themeRedDark dark:text-red-400">
+                RIZA<span class="text-themeRed dark:text-red-500">.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a href="#profil" class="hover:text-themeRed dark:hover:text-red-400 transition-colors">Profil & Keahlian</a>
+                <a href="#pengalaman" class="hover:text-themeRed dark:hover:text-red-400 transition-colors">Pengalaman</a>
+                <a href="#pendidikan" class="hover:text-themeRed dark:hover:text-red-400 transition-colors">Pendidikan</a>
+                <a href="#kontak" class="hover:text-themeRed dark:hover:text-red-400 transition-colors">Kontak</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-darkBorder text-gray-700 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+
+                <a href="#kontak" class="hidden md:inline-flex px-5 py-2 rounded-full text-sm font-semibold bg-themeRed text-white hover:bg-themeRedDark transition-all shadow-lg shadow-red-900/20">
+                    Hubungi Saya
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-btn" class="md:hidden text-themeRedDark dark:text-red-400 focus:outline-none ml-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-themeCream dark:bg-darkCard border-t border-themeCreamDark dark:border-darkBorder px-6 py-4">
+            <div class="flex flex-col space-y-4 text-sm font-medium text-gray-700 dark:text-gray-300">
+                <a href="#profil" class="mobile-link hover:text-themeRed dark:hover:text-red-400">Profil & Keahlian</a>
+                <a href="#pengalaman" class="mobile-link hover:text-themeRed dark:hover:text-red-400">Pengalaman</a>
+                <a href="#pendidikan" class="mobile-link hover:text-themeRed dark:hover:text-red-400">Pendidikan</a>
+                <a href="#kontak" class="mobile-link hover:text-themeRed dark:hover:text-red-400">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 relative overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute top-20 right-0 w-64 h-64 bg-red-100 dark:bg-red-900/20 rounded-full blur-3xl opacity-50 -z-10"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 bg-orange-100 dark:bg-orange-900/20 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white dark:bg-darkCard border border-themeCreamDark dark:border-darkBorder text-xs font-bold text-themeRed dark:text-red-400 tracking-wide uppercase shadow-sm">
+                    ✨ UI/UX Designer & Organisatoris
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-themeRedDark dark:text-red-400 leading-tight">
+                    Halo, Saya <br>
+                    <span class="text-themeRed dark:text-red-500">Riza Aliya Putri</span>
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                    Siswa Jurusan <strong>Rekayasa Perangkat Lunak (RPL)</strong> di SMK Nashirul Huda yang berdedikasi tinggi. Memadukan keahlian teknis Fullstack Development dengan jiwa kepemimpinan serta manajemen organisasi yang kuat.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#pengalaman" class="px-6 py-3 rounded-full text-sm font-semibold bg-themeRed text-white hover:bg-themeRedDark transition-all shadow-lg shadow-red-900/20">
+                        Lihat Pengalaman
+                    </a>
+                    <a href="#profil" class="px-6 py-3 rounded-full text-sm font-semibold bg-white dark:bg-darkCard text-themeRed dark:text-red-400 border border-themeRed dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all">
+                        Keahlian Saya
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Image / Graphic -->
+            <div class="flex-1 flex justify-center relative">
+                <div class="w-72 h-80 bg-white dark:bg-darkCard rounded-3xl border border-themeCreamDark dark:border-darkBorder card-shadow p-3 relative z-10">
+                    <div class="w-full h-full bg-themeCreamDark dark:bg-darkBg rounded-2xl overflow-hidden relative flex items-center justify-center">
+                        <!-- FOTO DIMASUKKAN DI SINI -->
+                        <img src="WhatsApp Image 2026-08-15 at 9.49.54 AM.jpeg" alt="Riza Aliya Putri" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+                <!-- Elemen Dekoratif -->
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-themeRed/10 dark:bg-themeRed/20 rounded-full blur-xl z-0"></div>
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-themeRed dark:bg-red-500 rounded-full opacity-10 dark:opacity-20 z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil & Keahlian Section -->
+    <section id="profil" class="py-20 bg-white dark:bg-darkCard transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div class="space-y-6">
+                <h2 class="text-sm font-bold tracking-widest text-themeRed dark:text-red-400 uppercase">Profil Singkat</h2>
+                <h3 class="text-3xl font-extrabold text-themeRedDark dark:text-red-300">Integrasi Logika & Kepemimpinan</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-justify">
+                    Siswa aktif SMK Nashirul Huda yang berdedikasi tinggi, memiliki jiwa kepemimpinan yang kuat, serta berpengalaman aktif dalam berbagai organisasi sekolah dan kemasyarakatan seperti OSIS, Pramuka, dan Saka Bakti Husada. Saya terbiasa memegang tanggung jawab manajerial, kesekretariatan, dan keuangan.
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-justify mt-4">
+                    Sebagai siswa jurusan <strong>Rekayasa Perangkat Lunak (RPL)</strong>, saya juga merancang antarmuka yang ramah pengguna (UI/UX) dan mengembangkan sistem web fungsional yang efisien (Fullstack), menggabungkan kreativitas analitis dengan eksekusi kode yang bersih.
+                </p>
+                
+                <div class="bg-themeCream dark:bg-darkBg p-6 rounded-2xl border border-themeCreamDark dark:border-darkBorder flex items-center gap-4 mt-6">
+                    <div class="w-12 h-12 bg-white dark:bg-darkCard rounded-full flex items-center justify-center text-themeRed dark:text-red-400 shrink-0 shadow-sm">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 uppercase font-semibold">Tempat, Tanggal Lahir</p>
+                        <p class="text-md font-bold text-themeRedDark dark:text-red-300">Garut, 11 Januari 2009</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Keahlian RPL / IT -->
+                <div>
+                    <h3 class="text-xl font-bold text-themeRedDark dark:text-red-300 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-themeRed dark:text-red-400"></i> Keahlian RPL & IT
+                    </h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+                            <i class="fa-brands fa-figma text-2xl text-themeRed dark:text-red-400 mb-2"></i>
+                            <p class="font-bold text-sm text-themeRedDark dark:text-red-300">UI/UX Design</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Wireframing, Prototyping, Figma</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+                            <i class="fa-solid fa-layer-group text-2xl text-themeRed dark:text-red-400 mb-2"></i>
+                            <p class="font-bold text-sm text-themeRedDark dark:text-red-300">Frontend Dev</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">HTML, CSS, JS, Tailwind</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+                            <i class="fa-solid fa-database text-2xl text-themeRed dark:text-red-400 mb-2"></i>
+                            <p class="font-bold text-sm text-themeRedDark dark:text-red-300">Backend Dev</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">PHP, Database Management</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+                            <i class="fa-solid fa-code-branch text-2xl text-themeRed dark:text-red-400 mb-2"></i>
+                            <p class="font-bold text-sm text-themeRedDark dark:text-red-300">Version Control</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Git, GitHub, Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minat & Bakat Organisasi -->
+                <div>
+                    <h3 class="text-xl font-bold text-themeRedDark dark:text-red-300 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-users-gear text-themeRed dark:text-red-400"></i> Minat & Bakat
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Kepemimpinan</span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Administrasi & Kearsipan</span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Public Speaking</span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Organisasi & Manajemen</span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Kesehatan Masyarakat</span>
+                        <span class="px-4 py-2 bg-gray-100 dark:bg-darkBg text-gray-700 dark:text-gray-300 rounded-xl text-sm font-semibold border border-themeCreamDark dark:border-darkBorder">Kerja Sama Tim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Organisasi Section -->
+    <section id="pengalaman" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-themeRed dark:text-red-400 uppercase">Jejak Organisasi</h2>
+                <h3 class="text-3xl font-extrabold text-themeRedDark dark:text-red-300 mt-2">Pengalaman Kepemimpinan</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-darkCard p-8 rounded-3xl border border-themeCreamDark dark:border-darkBorder card-shadow relative overflow-hidden group hover:border-themeRed/50 transition-colors">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-themeRed dark:bg-red-600"></div>
+                    <div class="mb-4">
+                        <h4 class="text-xl font-bold text-themeRedDark dark:text-red-300">OSIS SMK Nashirul Huda</h4>
+                        <p class="text-sm font-semibold text-themeRed dark:text-red-400 mt-1">Sekretaris (2025 – Sekarang) <br> <span class="text-gray-500 dark:text-gray-400 font-normal">Wakil Sekretaris (2024 – 2025)</span></p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
+                        <li>Mengelola administrasi, surat-menyurat, serta penyusunan proposal dan LPJ kegiatan.</li>
+                        <li>Mengoordinasikan agenda rapat dan dokumentasi seluruh kegiatan OSIS.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-darkCard p-8 rounded-3xl border border-themeCreamDark dark:border-darkBorder card-shadow relative overflow-hidden group hover:border-themeRed/50 transition-colors">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-themeRed dark:bg-red-600"></div>
+                    <div class="mb-4">
+                        <h4 class="text-xl font-bold text-themeRedDark dark:text-red-300">Pramuka Ambalan SMK</h4>
+                        <p class="text-sm font-semibold text-themeRed dark:text-red-400 mt-1">Pradana/Ketua (2025 – Sekarang) <br> <span class="text-gray-500 dark:text-gray-400 font-normal">Bid. Teknik Kepramukaan (2024 – 2025)</span></p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
+                        <li>Memimpin seluruh dinamika dan program kerja gerakan kepramukaan di sekolah.</li>
+                        <li>Merancang dan mengeksekusi pelatihan teknik kepramukaan serta kedisiplinan.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-darkCard p-8 rounded-3xl border border-themeCreamDark dark:border-darkBorder card-shadow relative overflow-hidden group hover:border-themeRed/50 transition-colors">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-themeRed dark:bg-red-600"></div>
+                    <div class="mb-4">
+                        <h4 class="text-xl font-bold text-themeRedDark dark:text-red-300">Saka Bakti Husada</h4>
+                        <p class="text-sm font-semibold text-themeRed dark:text-red-400 mt-1">Dewan Saka (2026 – Sekarang) <br> <span class="text-gray-500 dark:text-gray-400 font-normal">Anggota (2025 – 2026)</span></p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 list-disc list-inside">
+                        <li>Aktif dalam edukasi dan aksi sosial bidang kesehatan masyarakat.</li>
+                        <li>Menjadi jajaran kepengurusan dewan saka dalam merencanakan program kerja.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 (SMP) -->
+                <div class="bg-themeCreamDark/30 dark:bg-darkBorder/30 p-8 rounded-3xl border border-themeCreamDark dark:border-darkBorder relative overflow-hidden group">
+                    <div class="mb-4">
+                        <h4 class="text-xl font-bold text-gray-800 dark:text-gray-200">Tingkat SMPN 2 Bojonggambir</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm font-semibold text-themeRed dark:text-red-400">Bendahara OSIS <span class="text-gray-500 dark:text-gray-400 font-normal">(2023 – 2024)</span></p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Mengelola anggaran keuangan organisasi, pencatatan kas masuk-keluar, dan laporan operasional.</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-themeRed dark:text-red-400">Anggota Aktif Pramuka <span class="text-gray-500 dark:text-gray-400 font-normal">(2022 – 2024)</span></p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Berpartisipasi aktif dalam kegiatan kemah, latihan rutin, serta ajang perlombaan.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+            <    <!-- Pendidikan Section -->
+    <section id="pendidikan" class="py-20 bg-white dark:bg-darkCard transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-themeRed dark:text-red-400 uppercase">Akademik</h2>
+                <h3 class="text-3xl font-extrabold text-themeRedDark dark:text-red-300 mt-2">Riwayat Pendidikan</h3>
+            </div>
+
+            <div class="space-y-6">
+                <!-- SMK -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-2xl bg-themeCream dark:bg-darkBg border border-themeCreamDark dark:border-darkBorder hover:border-themeRed dark:hover:border-red-500 transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold text-themeRedDark dark:text-red-300">SMK Nashirul Huda</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Pendidikan Menengah Kejuruan - Rekayasa Perangkat Lunak</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 px-4 py-1.5 bg-white dark:bg-darkCard text-themeRed dark:text-red-400 rounded-full text-xs font-bold border border-themeCreamDark dark:border-darkBorder">
+                        2024 – Sekarang
+                    </div>
+                </div>
+
+                <!-- SMP -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-2xl bg-themeCream dark:bg-darkBg border border-themeCreamDark dark:border-darkBorder hover:border-themeRed dark:hover:border-red-500 transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold text-themeRedDark dark:text-red-300">SMPN 2 Bojonggambir</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Pendidikan Menengah Pertama</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 px-4 py-1.5 bg-white dark:bg-darkCard text-themeRed dark:text-red-400 rounded-full text-xs font-bold border border-themeCreamDark dark:border-darkBorder">
+                        2021 – 2024
+                    </div>
+                </div>
+
+                <!-- SD -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-2xl bg-themeCream dark:bg-darkBg border border-themeCreamDark dark:border-darkBorder hover:border-themeRed dark:hover:border-red-500 transition-colors">
+                    <div>
+                        <h4 class="text-lg font-bold text-themeRedDark dark:text-red-300">SDN 4 Pendeuy</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Pendidikan Dasar</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 px-4 py-1.5 bg-white dark:bg-darkCard text-themeRed dark:text-red-400 rounded-full text-xs font-bold border border-themeCreamDark dark:border-darkBorder">
+                        2015 – 2021
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Footer -->
+    <footer id="kontak" class="py-16 bg-themeRedDark text-white border-t-4 border-themeRed">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-extrabold mb-4">Mari Berkolaborasi</h3>
+                <p class="text-red-100 mb-8 max-w-md">
+                    Terbuka untuk diskusi mengenai desain antarmuka (UI/UX), pengembangan website, maupun proyek administratif lainnya.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-red-900 flex items-center justify-center text-white"><i class="fa-solid fa-phone"></i></div>
+                        <p class="text-sm">0813-8090-6238</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-red-900 flex items-center justify-center text-white"><i class="fa-solid fa-envelope"></i></div>
+                        <p class="text-sm">putririzaaliya@gmail.com</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-red-900 flex items-center justify-center text-white"><i class="fa-solid fa-location-dot"></i></div>
+                        <p class="text-sm">Kp. Burujul Desa Bojongkapol, Kec. Bojonggambir</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/20">
+                <h4 class="text-xl font-bold mb-6">Media Sosial</h4>
+                <div class="flex flex-col gap-4">
+                    <!-- Link Instagram Diperbarui -->
+                    <a href="https://www.instagram.com/dyaz_zaa?igsh=MXZwYzJiZ25ncmt5YQ==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/20 transition-colors border border-white/10">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                        <div>
+                            <p class="text-xs text-red-200">Instagram</p>
+                            <p class="font-bold">@dyaz_zaa</p>
+                        </div>
+                    </a>
+                    <!-- Link Facebook Diperbarui -->
+                    <a href="https://www.facebook.com/profile.php?id=100073982794277" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/20 transition-colors border border-white/10">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                        <div>
+                            <p class="text-xs text-red-200">Facebook</p>
+                            <p class="font-bold">Ichaa</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16 pt-8 border-t border-red-900/50 text-xs text-red-200">
+            &copy; 2026 Riza Aliya Putri. Web Portofolio UI/UX & RPL.
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Dark/Light Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        // Check local storage for theme preference on load
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
+</body>
+  </html>
